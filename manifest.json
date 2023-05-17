@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Link Expander",
+  "short_name": "Twitter Expander",
+  "version": "1.0.0",
+  "description": "Expands t.co links on Twitter.",
+  "author": "hello@sauce.sh",
+
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ]
+}
