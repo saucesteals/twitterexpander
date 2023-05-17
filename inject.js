@@ -23,7 +23,7 @@ const expand = (obj) => {
       urls[obj.url] = obj.expanded_url;
     }
 
-    if (value.startsWith("https://t.co/")) {
+    if (key !== "full_text" && value.startsWith("https://t.co/")) {
       proxy(obj, key, value);
     }
   });
